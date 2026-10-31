@@ -4,366 +4,996 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alpesh Kher — Senior UI/UX Designer</title>
-<meta name="description" content="Senior UI/UX Designer with 10+ years designing B2B SaaS, enterprise and web products. Design systems, product design, AI-assisted workflows.">
+<meta name="description" content="Alpesh Kher — Senior UI/UX designer with 10+ years in B2B SaaS, design systems, AI-assisted workflows and brand e-commerce. Based in Ahmedabad, India.">
+<meta name="theme-color" content="#0b0b0c">
 <meta property="og:title" content="Alpesh Kher — Senior UI/UX Designer">
-<meta property="og:description" content="Product design, B2B SaaS and design systems. 10+ years, 50+ projects.">
-<meta name="theme-color" content="#0a0b0d">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230a0b0d'/><text x='16' y='21.5' text-anchor='middle' font-family='monospace' font-size='14' font-weight='700' fill='%237cf2c4'>AK</text></svg>">
+<meta property="og:description" content="Untangling complex products — B2B SaaS, design systems and the flows in between.">
+<meta property="og:image" content="assets/avatar.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/portrait.webp" fetchpriority="high">
 <style>
-:root{
-  --bg:#0a0b0d; --bg-2:#111317; --card:#14171c; --line:#22262e; --line-2:#2e333d;
-  --fg:#eceef2; --fg-2:#a4abb8; --fg-3:#6c7381;
-  --accent:#7cf2c4; --accent-dim:rgba(124,242,196,.12);
-  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-  --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  --max:1120px; --r:14px;
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0c;
+  --bg-2: #121214;
+  --bg-3: #19191c;
+  --line: rgba(255, 255, 255, .08);
+  --line-2: rgba(255, 255, 255, .14);
+  --text: #f2f1ee;
+  --muted: #8e8d89;
+  --dim: #5c5b58;
+  --accent: #7cf2c4;
+  --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --wrap: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --radius: 22px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:56px 56px;opacity:.35;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 80%);
-  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 80%)}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--accent);color:var(--bg)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.mono{font-family:var(--mono)}
-.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--bg);padding:8px 12px;border-radius:8px;z-index:100}
-.skip:focus{left:8px}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 400 16px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--accent); color: #0b0b0c; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.wrap { width: min(var(--wrap), 100% - var(--gutter) * 2); margin-inline: auto; }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 100; background: var(--accent); color: #000; padding: 8px 14px; border-radius: 8px; }
+.skip:focus { left: 8px; }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(124, 242, 196, .15); margin-right: 10px; vertical-align: 1px; animation: pulse 2.4s infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(124, 242, 196, 0); } }
 
-/* nav */
-header{position:sticky;top:0;z-index:50;background:rgba(10,11,13,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{font-family:var(--mono);font-weight:500;font-size:14px;display:flex;align-items:center;gap:10px}
-.logo b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--accent-dim);color:var(--accent);border:1px solid rgba(124,242,196,.3);font-weight:700;font-size:12px}
-.nav ul{display:flex;list-style:none;gap:4px}
-.nav ul a{font-family:var(--mono);font-size:13px;color:var(--fg-2);padding:8px 12px;border-radius:8px;transition:color .2s,background .2s}
-.nav ul a:hover{color:var(--fg);background:var(--bg-2)}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;font-weight:500;padding:11px 18px;border-radius:10px;border:1px solid var(--line-2);background:var(--bg-2);color:var(--fg);transition:border-color .2s,transform .2s,background .2s;white-space:nowrap}
-.btn:hover{border-color:var(--fg-3);transform:translateY(-1px)}
-.btn.primary{background:var(--accent);color:#05140e;border-color:var(--accent)}
-.btn.primary:hover{background:#9af6d3}
-.btn svg{width:15px;height:15px}
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px;
+  border-radius: 999px; font: 500 15px/1 var(--body); border: 1px solid var(--line-2);
+  transition: transform .3s var(--ease), background .3s, color .3s, border-color .3s;
+}
+.btn:hover { transform: translateY(-2px); border-color: var(--text); }
+.btn-primary { background: var(--text); color: #0b0b0c; border-color: var(--text); }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+.btn .arrow { transition: transform .3s var(--ease); }
+.btn:hover .arrow { transform: translate(3px, -3px); }
 
-/* hero */
-.hero{padding:112px 0 88px}
-.status{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;color:var(--fg-2);border:1px solid var(--line-2);background:var(--bg-2);padding:6px 12px;border-radius:99px;margin-bottom:28px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(124,242,196,.6);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(124,242,196,0)}100%{box-shadow:0 0 0 0 rgba(124,242,196,0)}}
-h1{font-size:clamp(40px,7.2vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700}
-h1 .muted{color:var(--fg-3)}
-.lede{max-width:640px;color:var(--fg-2);font-size:clamp(16px,1.9vw,19px);margin:28px 0 36px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:40px;font-family:var(--mono);font-size:13px;color:var(--fg-3)}
-.meta span::before{content:"// ";color:var(--line-2)}
+/* ---------- nav ---------- */
+.nav {
+  position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 50;
+  display: flex; align-items: center; gap: 6px; padding: 6px 6px 6px 8px;
+  width: max-content; max-width: calc(100% - 24px);
+  background: rgba(18, 18, 20, .62); border: 1px solid var(--line-2); border-radius: 999px;
+  backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
+}
+.brand { display: flex; align-items: center; gap: 10px; padding-right: 10px; font: 700 17px/1 var(--display); letter-spacing: -.02em; }
+.brand img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+.brand b { font-weight: 700; }
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 2px; }
+.nav-links a { padding: 9px 14px; border-radius: 999px; font-size: 14px; color: #c9c8c4; transition: background .25s, color .25s; }
+.nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, .07); color: var(--text); }
+.nav-sep { width: 1px; height: 22px; background: var(--line-2); margin: 0 6px; }
+.socials { display: flex; gap: 4px; }
+.socials a {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  font: 600 11px/1 var(--mono); color: #c9c8c4; border: 1px solid var(--line); transition: all .25s;
+}
+.socials a:hover { color: #0b0b0c; background: var(--accent); border-color: var(--accent); }
+.nav .btn { height: 40px; padding: 0 18px; font-size: 14px; margin-left: 4px; }
+.menu-btn { display: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; color: var(--text); cursor: pointer; }
+.menu-btn span { display: block; width: 16px; height: 1.5px; background: currentColor; margin: 4px auto; transition: transform .3s; }
+.nav.open .menu-btn span:first-child { transform: translateY(2.75px) rotate(45deg); }
+.nav.open .menu-btn span:last-child { transform: translateY(-2.75px) rotate(-45deg); }
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2);overflow:hidden}
-.stat{padding:28px 24px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat strong{display:block;font-size:clamp(28px,4vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.1}
-.stat strong em{font-style:normal;color:var(--accent)}
-.stat span{font-family:var(--mono);font-size:12px;color:var(--fg-3)}
+/* ---------- hero ---------- */
+.hero {
+  position: relative; min-height: 100svh; overflow: hidden; isolation: isolate;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.hero::before { /* grid */
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px; background-position: center top;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 75%);
+}
+.hero::after { /* glow */
+  content: ""; position: absolute; z-index: -1; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px;
+  left: 50%; top: 18%; transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(124, 242, 196, .10), transparent 62%);
+}
+/* giant outlined name behind the portrait */
+.hero-name {
+  position: absolute; z-index: 0; left: 50%; top: 46%; transform: translate(-50%, -50%);
+  margin: 0; white-space: nowrap; pointer-events: none; user-select: none;
+  font: 800 clamp(110px, 19vw, 330px)/.8 var(--display); letter-spacing: -.06em; text-transform: uppercase;
+  color: transparent; -webkit-text-stroke: 1.2px rgba(242, 241, 238, .09);
+}
+/* colour-reveal photo: grayscale image + canvas that paints colour under the pointer */
+.rp { position: relative; aspect-ratio: 4 / 5; touch-action: pan-y; }
+.rp img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; filter: grayscale(1) contrast(1.06) brightness(1.02); user-select: none; -webkit-user-drag: none; }
+.rp canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero-photo {
+  position: absolute; z-index: 1; bottom: 0; left: max(58%, 50% + 150px); height: min(90svh, 980px);
+  transform: translate(-50%, var(--py, 0px));
+  mask-image: linear-gradient(to bottom, #000 68%, transparent 97%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 97%);
+  animation: photoIn 1.4s .15s var(--ease) both;
+}
+.hero-photo::before { /* soft halo behind the head */
+  content: ""; position: absolute; inset: 6% 12% 30%; z-index: -1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 242, 196, .16), transparent 68%); filter: blur(20px);
+}
+.hero-inner {
+  position: relative; z-index: 2; min-height: 100svh; pointer-events: none;
+  display: flex; justify-content: space-between; align-items: stretch; gap: 24px;
+  padding-top: 120px; padding-bottom: clamp(28px, 6vh, 64px);
+}
+.hero-inner a, .hero-inner .stat { pointer-events: auto; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; max-width: 560px; }
+.hero-title {
+  margin: 20px 0 26px; font: 800 clamp(48px, min(6.4vw, 11svh), 112px)/.86 var(--display);
+  letter-spacing: -.05em; text-transform: uppercase; color: #f2f1ee;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, .55);
+}
+.hero-title span { display: block; }
+.hero-title span:nth-child(2) { color: transparent; -webkit-text-stroke: 1.5px rgba(242, 241, 238, .8); text-shadow: none; }
+.hero-title span:nth-child(3) { color: var(--accent); }
+.hero-intro p { margin: 0 0 24px; max-width: 360px; color: #cfcdc8; font-size: 17px; text-shadow: 0 2px 16px rgba(0, 0, 0, .8); }
+.hero-intro p strong { color: var(--text); font-weight: 600; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-stats { display: grid; gap: 10px; width: 230px; align-content: end; }
+.photo-hint {
+  position: absolute; z-index: 3; left: 50%; bottom: 22px; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+  background: rgba(18, 18, 20, .6); border: 1px solid var(--line-2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #c9c8c4; pointer-events: none;
+  transition: opacity .5s;
+}
+.photo-hint i { font-style: normal; color: var(--accent); }
+.photo-hint.hide { opacity: 0; }
+.glass {
+  background: rgba(22, 22, 25, .55); border: 1px solid var(--line-2); border-radius: 18px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.stat { padding: 16px 18px; }
+.stat b { display: block; font: 700 34px/1 var(--display); letter-spacing: -.03em; }
+.stat b em { font-style: normal; color: var(--accent); }
+.stat span { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); line-height: 1.4; }
 
-/* sections */
-section{padding:96px 0 0}
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:40px;flex-wrap:wrap}
-.label{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.04em;margin-bottom:10px}
-h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;line-height:1.1;font-weight:600}
-.sec-head p{color:var(--fg-3);max-width:380px;font-size:15px}
+/* ---------- marquee ---------- */
+.marquee { overflow: hidden; border-block: 1px solid var(--line); padding: 20px 0; background: var(--bg-2); }
+.marquee-track { display: flex; width: max-content; animation: marquee 50s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font: 600 clamp(20px, 2.4vw, 30px)/1 var(--display); letter-spacing: -.02em; white-space: nowrap; }
+.marquee-track span i { font-style: normal; color: var(--accent); font-size: .42em; }
+@keyframes marquee { to { transform: translateX(-50%); } }
 
-/* work */
-.work{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s;overflow:hidden}
-.card:hover{border-color:var(--line-2);transform:translateY(-2px)}
-.card.lg{grid-column:span 3;min-height:300px}
-.card.sm{grid-column:span 2}
-.card .tag{font-family:var(--mono);font-size:11px;color:var(--fg-3);display:flex;gap:8px;flex-wrap:wrap}
-.card .tag i{font-style:normal;border:1px solid var(--line-2);padding:3px 8px;border-radius:6px}
-.card h3{font-size:21px;letter-spacing:-.02em;font-weight:600;line-height:1.25}
-.card p{color:var(--fg-2);font-size:15px}
-.card .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--fg-3);padding-top:8px}
-.card .arrow{width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:background .25s,color .25s,border-color .25s}
-.card:hover .arrow{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-.card .arrow svg{width:14px;height:14px}
-.viz{height:96px;border-radius:10px;border:1px dashed var(--line-2);background:
-  repeating-linear-gradient(90deg,transparent 0 23px,var(--line) 23px 24px),var(--bg-2);display:flex;align-items:flex-end;gap:6px;padding:12px}
-.viz b{flex:1;background:linear-gradient(to top,var(--accent-dim),rgba(124,242,196,.35));border-top:2px solid var(--accent);border-radius:3px 3px 0 0}
-.tokens{display:flex;flex-wrap:wrap;gap:6px}
-.tokens i{font-style:normal;font-family:var(--mono);font-size:11px;padding:5px 8px;border-radius:6px;background:var(--bg-2);border:1px solid var(--line);color:var(--fg-2)}
-.tokens i::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:0;background:var(--c,var(--accent))}
+/* ---------- sections ---------- */
+section { position: relative; }
+.section { padding: clamp(80px, 12vw, 150px) 0; }
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: clamp(36px, 5vw, 64px); flex-wrap: wrap; }
+.sec-head h2 { margin: 12px 0 0; font: 800 clamp(40px, 7vw, 96px)/.9 var(--display); letter-spacing: -.045em; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head p { max-width: 380px; margin: 0; color: var(--muted); }
 
-/* experience */
-.xp{border-top:1px solid var(--line)}
-.role{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:36px 0;border-bottom:1px solid var(--line)}
-.role .when{font-family:var(--mono);font-size:13px;color:var(--fg-3)}
-.role .when .now{display:inline-block;margin-top:8px;color:var(--accent);font-size:11px;border:1px solid rgba(124,242,196,.3);background:var(--accent-dim);padding:2px 8px;border-radius:99px}
-.role h3{font-size:22px;letter-spacing:-.02em;font-weight:600}
-.role h3 span{color:var(--fg-3);font-weight:400}
-.role ul{list-style:none;margin-top:16px;display:grid;gap:10px}
-.role li{position:relative;padding-left:22px;color:var(--fg-2);font-size:15px}
-.role li::before{content:"→";position:absolute;left:0;color:var(--fg-3);font-family:var(--mono);font-size:13px;top:1px}
-.role details summary{cursor:pointer;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--accent);list-style:none;display:inline-block}
-.role details summary::-webkit-details-marker{display:none}
-.role details[open] summary .more{display:none}
-.role details:not([open]) summary .less{display:none}
+/* intro statement */
+.statement { padding: clamp(80px, 11vw, 140px) 0 clamp(60px, 8vw, 100px); }
+.statement p { margin: 0; max-width: 1080px; font: 600 clamp(28px, 4.2vw, 56px)/1.12 var(--display); letter-spacing: -.03em; color: var(--dim); }
+.statement p b { color: var(--text); font-weight: 600; }
+.statement .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: clamp(48px, 6vw, 80px); background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.statement .cell { background: var(--bg); padding: 28px; }
+.statement .cell b { display: block; font: 800 clamp(44px, 5vw, 64px)/1 var(--display); letter-spacing: -.04em; }
+.statement .cell b em { font-style: normal; color: var(--accent); }
+.statement .cell span { display: block; margin-top: 10px; color: var(--muted); font-size: 15px; }
 
-/* skills */
-.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.skill{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-.skill h3{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--fg-2);margin-bottom:16px;display:flex;justify-content:space-between}
-.skill h3 span{color:var(--fg-3)}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{font-size:14px;padding:6px 12px;border-radius:8px;border:1px solid var(--line-2);color:var(--fg)}
-.skill.full{grid-column:1/-1}
+/* product work */
+.product-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px; }
+.pcard {
+  position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 28px;
+  min-height: 340px; padding: clamp(24px, 3vw, 36px); border-radius: var(--radius);
+  background: var(--bg-2); border: 1px solid var(--line); overflow: hidden;
+  transition: border-color .4s, transform .5s var(--ease);
+}
+.pcard:hover { border-color: var(--line-2); transform: translateY(-4px); }
+.pcard.big { grid-row: span 2; min-height: 560px; }
+.pcard .meta { display: flex; justify-content: space-between; gap: 12px; }
+.pcard h3 { margin: 0 0 10px; font: 700 clamp(26px, 2.8vw, 38px)/1.05 var(--display); letter-spacing: -.03em; }
+.pcard p { margin: 0; color: var(--muted); max-width: 520px; }
+.pcard .go { display: inline-flex; gap: 8px; margin-top: 18px; font: 500 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.pcard .go span { transition: transform .3s var(--ease); }
+.pcard:hover .go span { transform: translate(3px, -3px); }
+.pcard.big::before {
+  content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 242, 196, .16), transparent 65%);
+}
+/* mini UI mock inside big card */
+.mock { position: relative; border: 1px solid var(--line-2); border-radius: 14px; background: var(--bg); padding: 14px; display: grid; grid-template-columns: 110px 1fr; gap: 12px; }
+.mock .side { display: grid; gap: 8px; align-content: start; }
+.mock .side i { height: 10px; border-radius: 4px; background: var(--bg-3); }
+.mock .side i:nth-child(2) { background: rgba(124, 242, 196, .35); width: 80%; }
+.mock .main { display: grid; gap: 10px; }
+.mock .bar { height: 14px; width: 45%; border-radius: 4px; background: #2a2a2e; }
+.mock .steps { display: flex; gap: 6px; }
+.mock .steps i { flex: 1; height: 28px; border-radius: 8px; border: 1px solid var(--line-2); font: 500 10px/28px var(--mono); font-style: normal; text-align: center; color: var(--muted); }
+.mock .steps i.on { border-color: var(--accent); color: var(--accent); }
+.mock .rows { display: grid; gap: 6px; }
+.mock .rows i { height: 22px; border-radius: 6px; background: var(--bg-2); border: 1px solid var(--line); }
+.tokens { display: flex; flex-wrap: wrap; gap: 6px; }
+.tokens span { display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px; border-radius: 999px; border: 1px solid var(--line-2); font: 400 12px/1 var(--mono); color: #c9c8c4; }
+.tokens span i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.ai-chip { display: inline-flex; gap: 8px; align-items: center; padding: 8px 12px; border-radius: 10px; background: rgba(124, 242, 196, .08); border: 1px solid rgba(124, 242, 196, .25); color: var(--accent); font: 500 12px/1 var(--mono); }
+.archive { margin-top: 16px; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px clamp(24px, 3vw, 36px); border-radius: var(--radius); border: 1px dashed var(--line-2); transition: border-color .3s, background .3s; }
+.archive:hover { border-color: var(--accent); background: rgba(124, 242, 196, .04); }
+.archive b { font: 700 22px/1.1 var(--display); letter-spacing: -.02em; }
 
-.edu{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 28px}
-.edu strong{font-size:18px;font-weight:600;letter-spacing:-.01em}
-.edu p{color:var(--fg-2);font-size:15px}
+/* brand work — sticky stack */
+.stack { display: grid; gap: 28px; }
+.scard {
+  --c: #7cf2c4;
+  position: sticky; top: calc(90px + var(--i) * 14px);
+  display: grid; grid-template-columns: .9fr 1.3fr; gap: clamp(20px, 3vw, 44px); align-items: center;
+  padding: clamp(22px, 3vw, 40px); border-radius: 28px; border: 1px solid var(--line-2);
+  background:
+    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--c) 26%, transparent), transparent 60%),
+    linear-gradient(var(--bg-2), var(--bg-2));
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, .45);
+}
+.scard .num { font: 800 clamp(56px, 6vw, 84px)/.8 var(--display); letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 1.2px color-mix(in srgb, var(--c) 80%, white); }
+.scard h3 { margin: 22px 0 6px; font: 800 clamp(34px, 4.4vw, 60px)/.95 var(--display); letter-spacing: -.04em; }
+.scard .cat { color: var(--c); }
+.scard p { color: #bdbcb8; margin: 18px 0 22px; max-width: 420px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.chips span { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line-2); font-size: 13px; color: #c9c8c4; }
+.frame { border-radius: 16px; overflow: hidden; border: 1px solid var(--line-2); background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, .5); transform: rotate(1.2deg); transition: transform .6s var(--ease); }
+.scard:hover .frame { transform: rotate(0) scale(1.015); }
+.frame .bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; background: #1b1b1e; border-bottom: 1px solid var(--line); }
+.frame .bar i { width: 9px; height: 9px; border-radius: 50%; background: #3a3a3e; }
+.frame .bar span { margin-left: 10px; font: 400 11px/1 var(--mono); color: var(--muted); }
+.frame img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%; }
+
+.more-head { display: flex; justify-content: space-between; align-items: baseline; margin: clamp(64px, 8vw, 100px) 0 24px; gap: 16px; flex-wrap: wrap; }
+.more-head h3 { margin: 0; font: 700 clamp(26px, 3vw, 36px)/1 var(--display); letter-spacing: -.03em; }
+.mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.mini {
+  --c: #7cf2c4;
+  display: block; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: var(--bg-2);
+  transition: transform .5s var(--ease), border-color .3s;
+}
+.mini:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--c) 60%, transparent); }
+.mini .img { overflow: hidden; }
+.mini img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%; transition: transform .8s var(--ease); }
+.mini:hover img { transform: scale(1.05); }
+.mini .info { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 16px 18px; }
+.mini b { display: block; font: 700 19px/1.1 var(--display); letter-spacing: -.02em; }
+.mini small { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+.mini .arr { display: grid; place-items: center; flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line-2); transition: all .3s; }
+.mini:hover .arr { background: var(--c); border-color: var(--c); color: #0b0b0c; transform: rotate(-45deg); }
+
+/* practice */
+.practice { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 90px); }
+.practice-side { position: sticky; top: 110px; align-self: start; }
+.portrait-card { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line-2); background: var(--bg-2); margin-bottom: 24px; transition: border-color .4s, transform .6s var(--ease); }
+.portrait-card:hover { border-color: rgba(124, 242, 196, .45); transform: translateY(-4px); }
+.portrait-stage {
+  position: relative; overflow: hidden; aspect-ratio: 4 / 4.4;
+  background:
+    radial-gradient(60% 55% at 50% 38%, rgba(124, 242, 196, .22), transparent 70%),
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 36px 36px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 36px 36px,
+    var(--bg-3);
+}
+.portrait-stage .rp { position: absolute; left: 50%; bottom: 0; width: 96%; transform: translateX(-50%); transition: transform .8s var(--ease); }
+.portrait-card:hover .portrait-stage .rp { transform: translateX(-50%) scale(1.04); }
+.portrait-stage .rp { mask-image: linear-gradient(to bottom, #000 82%, transparent); -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent); }
+.portrait-stage .tag { position: absolute; z-index: 2; top: 14px; left: 14px; padding: 6px 10px; border-radius: 999px; background: rgba(11, 11, 12, .6); border: 1px solid var(--line-2); font: 500 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #c9c8c4; backdrop-filter: blur(8px); }
+.portrait-stage .tag i { font-style: normal; color: var(--accent); }
+.portrait-card .cap { padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.portrait-card b { font: 700 18px/1 var(--display); }
+.big-num { font: 800 clamp(90px, 11vw, 150px)/.8 var(--display); letter-spacing: -.06em; }
+.big-num em { font-style: normal; color: var(--accent); }
+.practice-side p { color: #bdbcb8; margin: 18px 0 0; }
+.services details { border-top: 1px solid var(--line); }
+.services details:last-child { border-bottom: 1px solid var(--line); }
+.services summary {
+  list-style: none; cursor: pointer; display: grid; grid-template-columns: 56px 1fr 40px; align-items: center; gap: 12px;
+  padding: 26px 0; font: 700 clamp(22px, 2.6vw, 32px)/1.1 var(--display); letter-spacing: -.025em; transition: color .3s;
+}
+.services summary::-webkit-details-marker { display: none; }
+.services summary:hover { color: var(--accent); }
+.services summary .n { font: 500 13px/1 var(--mono); color: var(--muted); }
+.services summary .pm { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; font: 400 20px/1 var(--body); transition: transform .4s var(--ease), background .3s; }
+.services details[open] summary .pm { transform: rotate(45deg); background: var(--accent); color: #0b0b0c; border-color: var(--accent); }
+.services details p { margin: -8px 0 26px 68px; color: var(--muted); max-width: 560px; }
+
+/* journey */
+.journey { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.job { display: grid; grid-template-columns: 220px 1fr 300px; gap: clamp(20px, 3vw, 40px); padding: clamp(28px, 4vw, 44px) 0; border-bottom: 1px solid var(--line); transition: background .3s; }
+.job:hover { background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .015), transparent); }
+.job .when b { display: block; font: 500 14px/1.4 var(--body); color: var(--text); }
+.job .when .badge { display: inline-block; margin-top: 10px; padding: 4px 10px; border-radius: 999px; font: 500 11px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: #0b0b0c; background: var(--accent); }
+.job h3 { margin: 0; font: 700 clamp(26px, 3vw, 38px)/1 var(--display); letter-spacing: -.03em; }
+.job .role { margin: 8px 0 16px; }
+.job ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: #bdbcb8; }
+.job li { position: relative; padding-left: 22px; }
+.job li::before { content: "—"; position: absolute; left: 0; color: var(--dim); }
+.metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-content: start; }
+.metric { padding: 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg-2); }
+.metric b { display: block; font: 800 28px/1 var(--display); letter-spacing: -.03em; }
+.metric b em { font-style: normal; color: var(--accent); }
+.metric span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); line-height: 1.35; }
+.companies { margin-top: clamp(48px, 6vw, 72px); }
+.companies .marquee { background: transparent; border: 0; padding: 8px 0; }
+.companies .marquee-track { animation-duration: 36s; }
+.companies .marquee-track span { color: var(--dim); font-size: clamp(28px, 4vw, 52px); font-weight: 800; letter-spacing: -.04em; }
+.companies .marquee-track span i { color: var(--accent); }
+
+/* toolkit */
+.toolkit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tk { padding: 26px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg-2); }
+.tk h3 { margin: 10px 0 18px; font: 700 22px/1.1 var(--display); letter-spacing: -.02em; }
+.tk .chips { margin: 0; }
+.tk.wide { grid-column: span 2; }
+.edu { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; background: linear-gradient(160deg, rgba(124, 242, 196, .10), transparent 55%), var(--bg-2); }
+.edu b { font: 700 22px/1.15 var(--display); letter-spacing: -.02em; }
+.edu p { margin: 6px 0 0; color: var(--muted); }
 
 /* contact */
-.contact{margin:96px 0 0;border:1px solid var(--line);border-radius:20px;padding:clamp(32px,6vw,72px);background:
-  radial-gradient(ellipse 60% 80% at 100% 0%,rgba(124,242,196,.10),transparent 60%),var(--bg-2);position:relative;overflow:hidden}
-.contact h2{font-size:clamp(32px,5.5vw,60px);max-width:760px}
-.contact .lede{margin:20px 0 32px}
-.links{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
-.links a{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;transition:border-color .2s}
-.links a:hover{border-color:var(--accent)}
-.links small{font-family:var(--mono);font-size:11px;color:var(--fg-3)}
-.links span{font-size:15px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-
-footer{padding:48px 0;color:var(--fg-3);font-family:var(--mono);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.contact { padding: clamp(90px, 13vw, 170px) 0 40px; text-align: center; overflow: hidden; }
+.contact::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(60% 50% at 50% 60%, rgba(124, 242, 196, .10), transparent 70%); }
+.contact h2 { margin: 18px 0 0; font: 800 clamp(56px, 12vw, 190px)/.85 var(--display); letter-spacing: -.06em; text-transform: uppercase; }
+.contact h2 a { display: inline-block; transition: color .3s; }
+.contact h2 a:hover { color: var(--accent); }
+.contact h2 em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px rgba(242, 241, 238, .6); }
+.contact .lead { margin: 26px auto 34px; max-width: 520px; color: #bdbcb8; font-size: 18px; }
+.contact .hero-ctas { justify-content: center; }
+.links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: clamp(60px, 8vw, 100px); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--line); text-align: left; }
+.links a { background: var(--bg); padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 10px; transition: background .3s, color .3s; }
+.links a:hover { background: var(--bg-2); color: var(--accent); }
+.links a b { display: block; font: 700 18px/1 var(--display); }
+.links a small { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+footer { border-top: 1px solid var(--line); padding: 26px 0 34px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
 /* reveal */
-.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+.hero-title span { opacity: 0; transform: translateY(40px); animation: rise 1s var(--ease) forwards; }
+.hero-title span:nth-child(2) { animation-delay: .12s; }
+.hero-title span:nth-child(3) { animation-delay: .24s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes photoIn { from { opacity: 0; filter: blur(12px); } to { opacity: 1; filter: blur(0); } }
 
-@media (max-width:900px){
-  .nav ul{display:none}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .card.lg,.card.sm{grid-column:span 6}
-  .card.lg{min-height:0}
-  .role{grid-template-columns:1fr;gap:12px}
-  .skills{grid-template-columns:1fr}
-  .links{grid-template-columns:repeat(2,1fr)}
+/* ---------- responsive ---------- */
+@media (max-width: 1100px) {
+  .nav-links a { padding: 9px 10px; }
+  .hero-intro { background: rgba(11, 11, 12, .72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 18px; border-radius: 18px; border: 1px solid var(--line); }
+  .job { grid-template-columns: 170px 1fr; }
+  .job .metrics { grid-column: 2; grid-template-columns: repeat(4, 1fr); }
 }
-@media (max-width:520px){
-  .wrap{padding:0 16px}
-  .hero{padding:72px 0 56px}
-  .nav .btn span{display:none}
-  .links{grid-template-columns:1fr}
-  .cta .btn{flex:1;justify-content:center}
-  .card{padding:22px}
+@media (max-width: 960px) {
+  .nav-links, .nav-sep, .socials { display: none; }
+  .menu-btn { display: block; }
+  .nav { width: calc(100% - 24px); justify-content: space-between; border-radius: 26px; flex-wrap: wrap; }
+  .nav .actions { display: flex; align-items: center; gap: 6px; }
+  .nav.open { background: rgba(14, 14, 16, .94); }
+  .nav.open .nav-links { display: flex; flex-direction: column; width: 100%; order: 3; padding: 8px 4px 4px; }
+  .nav.open .nav-links a { padding: 14px; font-size: 16px; }
+  .nav.open .socials { display: flex; order: 4; width: 100%; padding: 4px 4px 10px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .pcard.big { min-height: 0; }
+  .scard { grid-template-columns: 1fr; position: relative; top: 0; }
+  .mini-grid { grid-template-columns: 1fr 1fr; }
+  .practice { grid-template-columns: 1fr; }
+  .practice-side { position: static; display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; }
+  .portrait-card { margin: 0; }
+  .toolkit { grid-template-columns: 1fr 1fr; }
+  .links { grid-template-columns: 1fr 1fr; }
+  /* stack the hero: text → portrait → stats */
+  .hero { display: flex; flex-direction: column; min-height: 0; }
+  .hero-name, .photo-hint { display: none; }
+  .hero-inner { display: contents; }
+  .hero-left { order: 1; max-width: none; padding: 104px var(--gutter) 0; }
+  .hero-title { font-size: clamp(50px, 12.5vw, 110px); }
+  .hero-intro { background: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 0; border: 0; }
+  .hero-intro p { max-width: 520px; }
+  .hero-photo {
+    order: 2; position: relative; left: auto; bottom: auto; transform: none;
+    width: min(92vw, 520px); height: auto; margin: 8px auto 0;
+  }
+  .hero-stats { order: 3; position: relative; z-index: 2; width: auto; grid-template-columns: 1fr 1fr; padding: 0 var(--gutter) 28px; margin-top: -84px; }
+}
+@media (max-width: 720px) {
+  .hero-intro p { font-size: 15px; margin-bottom: 18px; }
+  .stat b { font-size: 28px; }
+  .statement .row { grid-template-columns: 1fr; }
+  .mini-grid { grid-template-columns: 1fr; }
+  .practice-side { grid-template-columns: 1fr; }
+  .portrait-card { max-width: 260px; }
+  .services summary { grid-template-columns: 40px 1fr 36px; }
+  .services details p { margin-left: 52px; }
+  .job { grid-template-columns: 1fr; gap: 14px; }
+  .job .metrics { grid-column: auto; grid-template-columns: 1fr 1fr; }
+  .toolkit { grid-template-columns: 1fr; }
+  .tk.wide { grid-column: auto; }
+  .links { grid-template-columns: 1fr; }
+  .btn { height: 44px; padding: 0 18px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <nav class="wrap nav" aria-label="Primary">
-    <a href="#top" class="logo"><b>AK</b>alpesh.kher</a>
-    <ul>
-      <li><a href="#work">work</a></li>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#contact">contact</a></li>
-    </ul>
-    <a class="btn" href="Alpesh-Kher-Resume.pdf" download>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg><span>Resume.pdf</span>
-    </a>
-  </nav>
-</header>
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="brand" href="#top" aria-label="Alpesh Kher — home"><img src="assets/avatar.webp" alt="" width="30" height="30"><b>Alpesh<span>.</span></b></a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#journey">Journey</a>
+    <a href="#toolkit">Toolkit</a>
+  </div>
+  <span class="nav-sep" aria-hidden="true"></span>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/alpeshkher" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    <a href="https://www.behance.net/kheralpesh" target="_blank" rel="noopener" aria-label="Behance">Bē</a>
+    <a href="https://dribbble.com/kheralpesh" target="_blank" rel="noopener" aria-label="Dribbble">Dr</a>
+    <a href="https://www.figma.com/design/Z2wA6tUPQXvyR7pjvVheqC/Portfolio?node-id=1-14" target="_blank" rel="noopener" aria-label="Figma portfolio">Fg</a>
+  </div>
+  <div class="actions">
+    <a class="btn btn-primary" href="#contact">Contact me</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</nav>
 
 <main id="main">
-  <div class="wrap" id="top">
-    <section class="hero" style="padding-top:112px">
-      <div class="status rv"><span class="dot"></span>Senior UI/UX Designer · Ahmedabad, India</div>
-      <h1 class="rv">Designing B2B SaaS,<br>design systems <span class="muted">&amp; the</span><br><span class="muted">flows in between.</span></h1>
-      <p class="lede rv">I'm Alpesh — 10+ years turning complex business rules into clear product experiences. Currently leading the end-to-end redesign of an enterprise SaaS platform at ZURU, and building the Figma design system behind it.</p>
-      <div class="cta rv">
-        <a class="btn primary" href="#work">View work
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6"/></svg></a>
-        <a class="btn" href="Alpesh-Kher-Resume.pdf" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download resume</a>
-        <a class="btn" href="mailto:kheralpesh77@gmail.com">Get in touch</a>
-      </div>
-      <div class="meta rv"><span>Product design</span><span>B2B SaaS</span><span>Design systems</span><span>AI-assisted workflows</span></div>
-    </section>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <p class="hero-name" aria-hidden="true">Alpesh Kher</p>
 
-    <div class="stats rv" role="list">
-      <div class="stat" role="listitem"><strong>10<em>+</em></strong><span>years in UI/UX</span></div>
-      <div class="stat" role="listitem"><strong>50<em>+</em></strong><span>client projects shipped</span></div>
-      <div class="stat" role="listitem"><strong>375</strong><span>tokens in current system</span></div>
-      <div class="stat" role="listitem"><strong>7</strong><span>designers led at peak</span></div>
+  <div class="hero-photo rp" data-reveal>
+    <img src="assets/portrait.webp" alt="Portrait of Alpesh Kher" width="1040" height="1300" fetchpriority="high">
+    <canvas aria-hidden="true"></canvas>
+  </div>
+
+  <div class="hero-inner wrap">
+    <div class="hero-left">
+      <p class="mono"><span class="dot"></span>Senior UI/UX Designer · Ahmedabad, India</p>
+      <h1 class="hero-title" aria-label="Untangling complex products.">
+        <span>Untangling</span><span>complex</span><span>products.</span>
+      </h1>
+      <div class="hero-intro">
+        <p>I'm <strong>Alpesh</strong> — I turn dense business rules into <strong>B2B SaaS, design systems</strong> and brand experiences people actually understand.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#work">View my work <span class="arrow">↗</span></a>
+          <a class="btn" href="Alpesh-Kher-Resume.pdf" download>Resume.pdf</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="glass stat"><b>10<em>+</em></b><span>years in UI/UX &amp; product design</span></div>
+      <div class="glass stat"><b>50<em>+</em></b><span>client projects shipped</span></div>
+    </div>
+  </div>
+
+  <p class="photo-hint" id="photoHint" aria-hidden="true"><i>✦</i> <span>Hover the portrait to add colour</span></p>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Product design <i>●</i> B2B SaaS <i>●</i> Design systems <i>●</i> Figma variables <i>●</i> UX research <i>●</i> AI-assisted workflows <i>●</i> Prototyping <i>●</i> E-commerce <i>●</i> Accessibility <i>●</i> Next.js handoff <i>●</i></span>
+    <span>Product design <i>●</i> B2B SaaS <i>●</i> Design systems <i>●</i> Figma variables <i>●</i> UX research <i>●</i> AI-assisted workflows <i>●</i> Prototyping <i>●</i> E-commerce <i>●</i> Accessibility <i>●</i> Next.js handoff <i>●</i></span>
+  </div>
+</div>
+
+<!-- ============ STATEMENT ============ -->
+<section class="statement">
+  <div class="wrap">
+    <p class="reveal">10+ years of turning <b>complex business rules</b> into clear flows — from <b>enterprise SaaS platforms</b> and the <b>design systems</b> behind them, to brand sites that ship across regions.</p>
+    <div class="row reveal">
+      <div class="cell"><b>375</b><span>design tokens in my current system</span></div>
+      <div class="cell"><b>1.5k<em>+</em></b><span>component variants covering every state</span></div>
+      <div class="cell"><b>11</b><span>live brand &amp; e-commerce sites shipped</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT WORK ============ -->
+<section class="section" id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="mono">01 — Product &amp; systems</p>
+        <h2>Selected <em>product</em> work</h2>
+      </div>
+      <p>Enterprise work lives in full case studies on Behance and Figma — each card opens the details.</p>
     </div>
 
-    <!-- WORK -->
-    <section id="work">
-      <div class="sec-head">
-        <div><div class="label">01 / selected work</div><h2>Work &amp; case studies</h2></div>
-        <p>Full case studies live on Behance, Dribbble and Figma — each card links out.</p>
-      </div>
-      <div class="work">
-        <!-- EDIT: replace href with a case-study link -->
-        <a class="card lg rv" href="https://www.behance.net/kheralpesh" target="_blank" rel="noopener">
-          <div class="tag"><i>Enterprise SaaS</i><i>2024 – now</i></div>
+    <div class="product-grid">
+      <a class="pcard big reveal" href="https://www.behance.net/kheralpesh" target="_blank" rel="noopener">
+        <div class="meta"><span class="mono">Enterprise SaaS</span><span class="mono">2024 — now</span></div>
+        <div class="mock" aria-hidden="true">
+          <div class="side"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="main">
+            <div class="bar"></div>
+            <div class="steps"><i class="on">Draft</i><i class="on">Review</i><i>Approve</i></div>
+            <div class="rows"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div>
           <h3>Enterprise platform redesign — 12 product modules</h3>
-          <p>End-to-end research, wireframes, prototypes and final UI, including a new guided Workflow module with draft and approval states.</p>
-          <div class="viz" aria-hidden="true"><b style="height:40%"></b><b style="height:62%"></b><b style="height:48%"></b><b style="height:78%"></b><b style="height:58%"></b><b style="height:90%"></b><b style="height:70%"></b></div>
-          <div class="foot">case study → behance<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
-        </a>
-        <!-- EDIT: replace href with a case-study link -->
-        <a class="card lg rv" href="https://www.figma.com/design/Z2wA6tUPQXvyR7pjvVheqC/Portfolio?node-id=1-14" target="_blank" rel="noopener">
-          <div class="tag"><i>Design system</i><i>Figma variables</i></div>
-          <h3>A shadcn-based design system with light &amp; dark modes</h3>
-          <p>375 tokens, 110 styles and 99 component sets with 1,500+ variants covering every interaction and error state.</p>
-          <div class="tokens" aria-hidden="true"><i>color/primary</i><i style="--c:#6c7381">color/muted</i><i style="--c:#f2b97c">color/warning</i><i style="--c:#f27c8a">color/destructive</i><i style="--c:#eceef2">radius/md</i><i style="--c:#7cb8f2">focus/ring</i></div>
-          <div class="foot">explore → figma<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
-        </a>
-        <!-- EDIT: replace href with a case-study link -->
-        <a class="card sm rv" href="https://dribbble.com/kheralpesh" target="_blank" rel="noopener">
-          <div class="tag"><i>Brand &amp; e-commerce</i></div>
-          <h3>10+ brand websites for ZURU Edge &amp; ZURU Toys</h3>
-          <p>Rascals, Millie Moon, Hey Tiger, Bonkers and more — responsive, multi-region, built in Next.js.</p>
-          <div class="foot">shots → dribbble<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
-        </a>
-        <!-- EDIT: replace href with a case-study link -->
-        <a class="card sm rv" href="https://www.behance.net/kheralpesh" target="_blank" rel="noopener">
-          <div class="tag"><i>AI features</i></div>
+          <p>End-to-end research, wireframes, prototypes and final UI for a B2B SaaS platform — including a new guided Workflow module with draft and approval states.</p>
+          <span class="go">Case study on Behance <span>↗</span></span>
+        </div>
+      </a>
+
+      <a class="pcard reveal" href="https://www.figma.com/design/Z2wA6tUPQXvyR7pjvVheqC/Portfolio?node-id=1-14" target="_blank" rel="noopener">
+        <div class="meta"><span class="mono">Design system</span><span class="mono">Figma variables</span></div>
+        <div class="tokens" aria-hidden="true">
+          <span><i style="--c:#7cf2c4"></i>color/primary</span>
+          <span><i style="--c:#3a3a3e"></i>color/muted</span>
+          <span><i style="--c:#f5b44a"></i>color/warning</span>
+          <span><i style="--c:#ff6b6b"></i>color/destructive</span>
+          <span>radius/md</span><span>focus/ring</span>
+        </div>
+        <div>
+          <h3>A shadcn-based system, light &amp; dark</h3>
+          <p>375 tokens, 110 styles and 99 component sets with 1,500+ variants.</p>
+          <span class="go">Explore in Figma <span>↗</span></span>
+        </div>
+      </a>
+
+      <a class="pcard reveal" href="https://www.behance.net/kheralpesh" target="_blank" rel="noopener">
+        <div class="meta"><span class="mono">AI features</span><span class="mono">Product UX</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap" aria-hidden="true">
+          <span class="ai-chip">✦ Run checks</span><span class="ai-chip">✦ Suggested records</span><span class="ai-chip">✦ Request changes</span>
+        </div>
+        <div>
           <h3>AI review cycles &amp; suggested records</h3>
-          <p>Run checks, send to review, approve or request changes — AI woven into everyday product flows.</p>
-          <div class="foot">case study → behance<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
-        </a>
-        <a class="card sm rv" href="https://drive.google.com/drive/folders/1ha3IQ3gMoRJBP__ik4rB3txDoZPPq0FP?usp=drive_link" target="_blank" rel="noopener">
-          <div class="tag"><i>Archive</i><i>2015 – 2024</i></div>
-          <h3>Full portfolio archive</h3>
-          <p>Client work across SaaS, e-commerce, landing pages and brand identity.</p>
-          <div class="foot">open → drive<span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
-        </a>
-      </div>
-    </section>
+          <p>Run checks, send to review, approve or request changes — AI woven into everyday flows.</p>
+          <span class="go">Case study on Behance <span>↗</span></span>
+        </div>
+      </a>
+    </div>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="sec-head">
-        <div><div class="label">02 / experience</div><h2>Where I've worked</h2></div>
-        <p>7+ years in lead roles, from agency delivery to in-house product.</p>
-      </div>
-      <div class="xp">
-        <article class="role rv">
-          <div class="when">Nov 2024 — Present<br><span class="now">current</span></div>
-          <div>
-            <h3>ZURU <span>· Senior UI/UX Designer</span></h3>
-            <ul>
-              <li>Lead the end-to-end redesign of an enterprise B2B SaaS platform across 12 product modules, including a new guided Workflow module.</li>
-              <li>Build and maintain the Figma design system on shadcn foundations: 375 tokens, 110 styles and 99 component sets with 1,500+ variants.</li>
-              <li>Designed 10+ responsive brand and e-commerce websites for ZURU Edge and ZURU Toys with Next.js/React developers.</li>
-            </ul>
-            <details><summary class="mono"><span class="more">+ 7 more</span><span class="less">− show less</span></summary>
-              <ul>
-                <li>Turn complex business rules into guided task flows with PMs and domain experts, such as a step-by-step workflow wizard with draft and approval states.</li>
-                <li>Designed multi-region versions of the Millie Moon website and internal web tools for QA reporting and store mapping.</li>
-                <li>Deliver Figma handoff with annotated specs, token names, responsive and edge-case states, plus a per-module changelog.</li>
-                <li>Work in Agile/Scrum with PM, Engineering and QA: sprint planning, design reviews and UAT sign-off.</li>
-                <li>Design AI-assisted product features, including an AI review cycle and AI-suggested record creation.</li>
-                <li>Connected Claude to Figma to generate screens and variants directly from approved design-system components.</li>
-                <li>Automated design QA, UX copy and handoff documentation with reusable AI workflows.</li>
-              </ul>
-            </details>
-          </div>
-        </article>
-        <article class="role rv">
-          <div class="when">May 2021 — Oct 2024</div>
-          <div>
-            <h3>Bacancy Technology <span>· Lead UI/UX Designer</span></h3>
-            <ul>
-              <li>Led UX for multiple concurrent client products, from stakeholder discovery to delivery.</li>
-              <li>Planned and ran user interviews and qualitative studies; turned findings into product scope decisions.</li>
-              <li>Created user flows, wireframes and interactive Figma prototypes; partnered with Agile teams on design QA.</li>
-              <li>Mentored designers and set shared UI guidelines and reusable components across projects.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="role rv">
-          <div class="when">Jan 2017 — May 2021</div>
-          <div>
-            <h3>Kody Technolabs <span>· Lead UI/UX Designer, Team Lead</span></h3>
-            <ul>
-              <li>Delivered 35+ client projects on time — web apps, e-commerce sites and landing pages.</li>
-              <li>Managed and mentored a 7-person design team, including onboarding and training juniors.</li>
-              <li>Redesigned the in-house website's UX to improve conversion and customer experience.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="role rv">
-          <div class="when">Jan 2015 — Jan 2017</div>
-          <div>
-            <h3>Greycells Design <span>· UI/UX Designer / Web Designer</span></h3>
-            <ul>
-              <li>Delivered 18+ projects across websites, responsive layouts, brand identity, logos, brochures and illustration.</li>
-              <li>Led a 4-person design team, presenting UI and UX solutions directly to clients and management.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
+    <a class="archive reveal" href="https://drive.google.com/drive/folders/1ha3IQ3gMoRJBP__ik4rB3txDoZPPq0FP?usp=drive_link" target="_blank" rel="noopener">
+      <div><span class="mono">Archive · 2015 — 2024</span><br><b>Full portfolio archive — SaaS, e-commerce, landing pages &amp; identity</b></div>
+      <span class="btn">Open drive <span class="arrow">↗</span></span>
+    </a>
+  </div>
+</section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="sec-head">
-        <div><div class="label">03 / toolkit</div><h2>Skills &amp; tools</h2></div>
+<!-- ============ BRAND WORK ============ -->
+<section class="section" id="brands" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="mono">02 — Brand &amp; e-commerce</p>
+        <h2>Sites live in <em>the wild</em></h2>
       </div>
-      <div class="skills">
-        <div class="skill rv"><h3>design <span>/01</span></h3><div class="chips"><span>Product design</span><span>UI design</span><span>Interaction design</span><span>Visual design</span><span>Responsive design</span><span>Web &amp; mobile apps</span><span>Wireframing</span><span>Prototyping</span><span>Brand identity</span></div></div>
-        <div class="skill rv"><h3>research <span>/02</span></h3><div class="chips"><span>User research</span><span>User interviews</span><span>Usability testing</span><span>UX audits</span><span>User flows</span></div></div>
-        <div class="skill rv"><h3>systems &amp; handoff <span>/03</span></h3><div class="chips"><span>Design systems</span><span>Design tokens</span><span>Figma variables</span><span>Component libraries</span><span>Accessibility</span><span>React / Next.js handoff</span><span>Agile / Scrum</span></div></div>
-        <div class="skill rv"><h3>ai workflows <span>/04</span></h3><div class="chips"><span>AI-assisted design</span><span>AI prototyping</span><span>Design automation</span><span>Claude</span><span>ChatGPT</span><span>Figma + AI</span></div></div>
-        <div class="skill full rv"><h3>tools <span>/05</span></h3><div class="chips"><span>Figma</span><span>Adobe XD</span><span>Sketch</span><span>Photoshop</span><span>Illustrator</span><span>Jira</span><span>Linear</span><span>GitLab</span><span>Trello</span><span>Microsoft 365</span><span>HTML5</span><span>CSS3</span></div></div>
-      </div>
-      <div class="edu rv" style="margin-top:16px">
-        <div><div class="label" style="margin:0 0 6px">education</div><strong>Bachelor of Computer Applications (BCA)</strong><p>GLS University, Ahmedabad, Gujarat</p></div>
-        <span class="mono" style="color:var(--fg-3);font-size:13px">2011 — 2014</span>
-      </div>
-    </section>
+      <p>Responsive, multi-region brand websites for ZURU Edge &amp; ZURU Toys — designed as lead UI/UX and built with Next.js developers.</p>
+    </div>
 
-    <!-- CONTACT -->
-    <div class="contact rv" id="contact">
-      <div class="label">04 / contact</div>
-      <h2>Have a product that needs untangling? Let's talk.</h2>
-      <p class="lede">Open to senior product design roles and conversations about B2B SaaS, design systems and AI-assisted design.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:kheralpesh77@gmail.com">kheralpesh77@gmail.com</a>
-        <a class="btn" href="Alpesh-Kher-Resume.pdf" download>Download resume</a>
+    <div class="stack">
+      <article class="scard" style="--i:0;--c:#f2577a">
+        <div>
+          <div class="num">01</div>
+          <h3>Gumi Yum</h3>
+          <span class="mono cat">Toys · Confectionery</span>
+          <p>A candy-collectible brand world — an illustrated “Gumiland” hero, limited collection drops and region-aware where-to-buy.</p>
+          <div class="chips"><span>Lead UI/UX</span><span>Multi-region</span><span>Collections</span></div>
+          <a class="btn btn-primary" href="https://www.gumiyum.com/" target="_blank" rel="noopener">View live <span class="arrow">↗</span></a>
+        </div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>gumiyum.com</span></div><img src="assets/projects/gumiyum.webp" alt="Gumi Yum homepage" width="1280" height="800" loading="lazy"></div>
+      </article>
+
+      <article class="scard" style="--i:1;--c:#c9a6ff">
+        <div>
+          <div class="num">02</div>
+          <h3>Daise</h3>
+          <span class="mono cat">Beauty · Bodycare</span>
+          <p>Mood-matching fragrance and bodycare. Type-led, playful layouts with product discovery rails and review blocks.</p>
+          <div class="chips"><span>Lead UI/UX</span><span>Art direction</span><span>E-commerce</span></div>
+          <a class="btn btn-primary" href="https://www.daisebeauty.com/" target="_blank" rel="noopener">View live <span class="arrow">↗</span></a>
+        </div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>daisebeauty.com</span></div><img src="assets/projects/daise.webp" alt="Daise homepage" width="1280" height="800" loading="lazy"></div>
+      </article>
+
+      <article class="scard" style="--i:2;--c:#e8d9bf">
+        <div>
+          <div class="num">03</div>
+          <h3>Millie Moon</h3>
+          <span class="mono cat">Baby care · Premium</span>
+          <p>A calm, editorial premium-diaper brand — soft palette, serif type and a clear size-guide and product flow.</p>
+          <div class="chips"><span>Lead UI/UX</span><span>Editorial</span><span>Size guide</span></div>
+          <a class="btn btn-primary" href="https://www.mymilliemoon.com/" target="_blank" rel="noopener">View live <span class="arrow">↗</span></a>
+        </div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>mymilliemoon.com</span></div><img src="assets/projects/milliemoon.webp" alt="Millie Moon homepage" width="1280" height="800" loading="lazy"></div>
+      </article>
+
+      <article class="scard" style="--i:3;--c:#ff6a13">
+        <div>
+          <div class="num">04</div>
+          <h3>Hey Tiger</h3>
+          <span class="mono cat">Baby care · Playful</span>
+          <p>A loud, high-energy nappy brand — video-led hero, benefit marquees and a range that's easy to scan on a phone.</p>
+          <div class="chips"><span>Lead UI/UX</span><span>Motion</span><span>Mobile-first</span></div>
+          <a class="btn btn-primary" href="https://heytigerdiapers.com/" target="_blank" rel="noopener">View live <span class="arrow">↗</span></a>
+        </div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>heytigerdiapers.com</span></div><img src="assets/projects/heytiger.webp" alt="Hey Tiger homepage" width="1280" height="800" loading="lazy"></div>
+      </article>
+
+      <article class="scard" style="--i:4;--c:#ff4fa0">
+        <div>
+          <div class="num">05</div>
+          <h3>Starbox</h3>
+          <span class="mono cat">Toys · Collectibles</span>
+          <p>A collectible plush universe with sub-brand pages for Sad Baby, Nook Nooks and Minnee — plus a personality quiz.</p>
+          <div class="chips"><span>Lead UI/UX</span><span>Sub-brands</span><span>Quiz</span></div>
+          <a class="btn btn-primary" href="https://www.starboxworld.com/" target="_blank" rel="noopener">View live <span class="arrow">↗</span></a>
+        </div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>starboxworld.com</span></div><img src="assets/projects/starbox.webp" alt="Starbox homepage" width="1280" height="800" loading="lazy"></div>
+      </article>
+    </div>
+
+    <div class="more-head reveal">
+      <h3>More shipped work</h3>
+      <span class="mono">06 sites</span>
+    </div>
+    <div class="mini-grid">
+      <a class="mini reveal" style="--c:#c2ff3d" href="https://www.rascalsnightpants.com/" target="_blank" rel="noopener">
+        <div class="img"><img src="assets/projects/nightpants.webp" alt="Rascals Night Pants homepage" width="1280" height="800" loading="lazy"></div>
+        <div class="info"><div><b>Night Pants</b><small>Nighttime underwear</small></div><span class="arr">↗</span></div>
+      </a>
+      <a class="mini reveal" style="--c:#1e8bff" href="https://www.daily8treats.com/" target="_blank" rel="noopener">
+        <div class="img"><img src="assets/projects/daily8.webp" alt="Daily 8 homepage" width="1280" height="800" loading="lazy"></div>
+        <div class="info"><div><b>Daily 8</b><small>Dog treats</small></div><span class="arr">↗</span></div>
+      </a>
+      <a class="mini reveal" style="--c:#2dd4f0" href="https://trueforeverybody.com/" target="_blank" rel="noopener">
+        <div class="img"><img src="assets/projects/true.webp" alt="True homepage" width="1280" height="800" loading="lazy"></div>
+        <div class="info"><div><b>True</b><small>Clean hair &amp; bodycare</small></div><span class="arr">↗</span></div>
+      </a>
+      <a class="mini reveal" style="--c:#ffc62e" href="https://www.mrpurrscatfood.com/" target="_blank" rel="noopener">
+        <div class="img"><img src="assets/projects/mrpurrs.webp" alt="Mr Purrs homepage" width="1280" height="800" loading="lazy"></div>
+        <div class="info"><div><b>Mr Purrs</b><small>Cat food</small></div><span class="arr">↗</span></div>
+      </a>
+      <a class="mini reveal" style="--c:#a07ff0" href="https://neatohome.com/" target="_blank" rel="noopener">
+        <div class="img"><img src="assets/projects/neato.webp" alt="Neato homepage" width="1280" height="800" loading="lazy"></div>
+        <div class="info"><div><b>Neato</b><small>Home cleaning</small></div><span class="arr">↗</span></div>
+      </a>
+      <a class="mini reveal" style="--c:#3b8be0" href="https://storemap.co/" target="_blank" rel="noopener">
+        <div class="img"><img src="assets/projects/storemap.webp" alt="Storemap sign-in screen" width="1280" height="800" loading="lazy"></div>
+        <div class="info"><div><b>Storemap</b><small>SaaS web app</small></div><span class="arr">↗</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRACTICE ============ -->
+<section class="section" id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="mono">03 — About me</p>
+        <h2>How I <em>work</em></h2>
       </div>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/alpeshkher" target="_blank" rel="noopener"><small>linkedin ↗</small><span>/in/alpeshkher</span></a>
-        <a href="https://www.behance.net/kheralpesh" target="_blank" rel="noopener"><small>behance ↗</small><span>/kheralpesh</span></a>
-        <a href="https://dribbble.com/kheralpesh" target="_blank" rel="noopener"><small>dribbble ↗</small><span>/kheralpesh</span></a>
-        <a href="https://www.figma.com/design/Z2wA6tUPQXvyR7pjvVheqC/Portfolio?node-id=1-14" target="_blank" rel="noopener"><small>figma ↗</small><span>Portfolio file</span></a>
+    </div>
+    <div class="practice">
+      <aside class="practice-side reveal">
+        <div class="portrait-card">
+          <div class="portrait-stage">
+            <span class="tag"><i>✦</i> Move over me</span>
+            <div class="rp" data-reveal>
+              <img src="assets/portrait.webp" alt="Alpesh Kher" width="1040" height="1300" loading="lazy">
+              <canvas aria-hidden="true"></canvas>
+            </div>
+          </div>
+          <div class="cap"><b>Alpesh Kher</b><span class="mono">Ahmedabad, IN · <span id="clock">--:--</span></span></div>
+        </div>
+        <div>
+          <div class="big-num">10<em>+</em></div>
+          <p>years in UI/UX and product design, from agency delivery to in-house product. Give me a tangle of business rules, edge cases and stakeholders, and I'll find the simplest flow through it, whether that's enterprise SaaS, a design system or an AI feature.</p>
+        </div>
+      </aside>
+
+      <div class="services reveal">
+        <details open>
+          <summary><span class="n">01</span>Complex flows, made simple<span class="pm">+</span></summary>
+          <p>I map the rules first, then the screens: discovery, information architecture, wireframes, prototypes and final UI, and I stay in the loop through design QA until it ships.</p>
+        </details>
+        <details>
+          <summary><span class="n">02</span>Systems built to scale<span class="pm">+</span></summary>
+          <p>Figma libraries on shadcn foundations: variables, light and dark modes, and components with every interaction and error state accounted for, so developers never have to guess.</p>
+        </details>
+        <details>
+          <summary><span class="n">03</span>Talking to real users<span class="pm">+</span></summary>
+          <p>Interviews, usability sessions and UX audits that I plan and run myself, with findings written up as clear scope calls the whole team can act on.</p>
+        </details>
+        <details>
+          <summary><span class="n">04</span>AI inside everyday work<span class="pm">+</span></summary>
+          <p>Review cycles, suggested records and approval states that put AI where people already work. I also use Claude, ChatGPT and Figma AI to prototype and automate my own process.</p>
+        </details>
+        <details>
+          <summary><span class="n">05</span>Brand sites that sell<span class="pm">+</span></summary>
+          <p>Bold, responsive, multi-region brand and e-commerce sites, designed hand in hand with React and Next.js developers so the build matches the design.</p>
+        </details>
+        <details>
+          <summary><span class="n">06</span>Growing design teams<span class="pm">+</span></summary>
+          <p>I've led design teams of up to seven people: onboarding juniors, running reviews, and setting the shared UI guidelines that keep quality steady from project to project.</p>
+        </details>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="section" id="journey" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="mono">04 — Journey · 2015 — present</p>
+        <h2>Where I've <em>worked</em></h2>
+      </div>
+      <p>10+ years across agency delivery and in-house product teams.</p>
+    </div>
+
+    <div class="journey">
+      <article class="job reveal">
+        <div class="when"><b>Nov 2024 — Present</b><span class="mono">Ahmedabad</span><br><span class="badge">Current</span></div>
+        <div>
+          <h3>ZURU</h3>
+          <p class="mono role">Senior UI/UX Designer</p>
+          <ul>
+            <li>Lead the end-to-end redesign of an enterprise B2B SaaS platform across 12 product modules, including a new guided Workflow module.</li>
+            <li>Build and maintain the Figma design system on shadcn foundations — tokens, styles and component sets with full state coverage.</li>
+            <li>Designed responsive, multi-region brand and e-commerce sites for ZURU Edge and ZURU Toys with Next.js / React developers.</li>
+          </ul>
+        </div>
+        <div class="metrics">
+          <div class="metric"><b>12</b><span>product modules</span></div>
+          <div class="metric"><b>375</b><span>design tokens</span></div>
+          <div class="metric"><b>1.5k<em>+</em></b><span>component variants</span></div>
+          <div class="metric"><b>11</b><span>live brand sites</span></div>
+        </div>
+      </article>
+
+      <article class="job reveal">
+        <div class="when"><b>May 2021 — Oct 2024</b><span class="mono">Ahmedabad</span></div>
+        <div>
+          <h3>Bacancy Technology</h3>
+          <p class="mono role">Lead UI/UX Designer</p>
+          <ul>
+            <li>Led UX for multiple concurrent client products, from stakeholder discovery to delivery.</li>
+            <li>Planned and ran user interviews and qualitative studies; turned findings into scope decisions.</li>
+            <li>Mentored designers and set shared UI guidelines and reusable components across projects.</li>
+          </ul>
+        </div>
+        <div class="metrics">
+          <div class="metric"><b>3.5</b><span>years leading UX</span></div>
+          <div class="metric"><b>Multi</b><span>concurrent client products</span></div>
+        </div>
+      </article>
+
+      <article class="job reveal">
+        <div class="when"><b>Jan 2017 — May 2021</b><span class="mono">Ahmedabad</span></div>
+        <div>
+          <h3>Kody Technolabs</h3>
+          <p class="mono role">Lead UI/UX Designer · Team Lead</p>
+          <ul>
+            <li>Delivered 35+ client projects on time — web apps, e-commerce sites and landing pages.</li>
+            <li>Managed and mentored a seven-person design team, including onboarding and training juniors.</li>
+            <li>Redesigned the in-house website's UX to improve conversion and customer experience.</li>
+          </ul>
+        </div>
+        <div class="metrics">
+          <div class="metric"><b>35<em>+</em></b><span>projects delivered</span></div>
+          <div class="metric"><b>7</b><span>designers led</span></div>
+        </div>
+      </article>
+
+      <article class="job reveal">
+        <div class="when"><b>Jan 2015 — Jan 2017</b><span class="mono">Ahmedabad</span></div>
+        <div>
+          <h3>Greycells Design</h3>
+          <p class="mono role">UI/UX Designer · Web Designer</p>
+          <ul>
+            <li>Delivered projects across websites, responsive layouts, brand identity, logos, brochures and illustration.</li>
+            <li>Led a four-person design team, presenting UI and UX solutions directly to clients and management.</li>
+          </ul>
+        </div>
+        <div class="metrics">
+          <div class="metric"><b>18<em>+</em></b><span>projects delivered</span></div>
+          <div class="metric"><b>4</b><span>designers led</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="companies" aria-hidden="true">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>ZURU <i>●</i> Bacancy Technology <i>●</i> Kody Technolabs <i>●</i> Greycells Design <i>●</i></span>
+        <span>ZURU <i>●</i> Bacancy Technology <i>●</i> Kody Technolabs <i>●</i> Greycells Design <i>●</i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLKIT ============ -->
+<section class="section" id="toolkit" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="mono">05 — Toolkit</p>
+        <h2>Skills &amp; <em>tools</em></h2>
+      </div>
+    </div>
+    <div class="toolkit">
+      <div class="tk reveal"><span class="mono">/01</span><h3>Design</h3><div class="chips"><span>Product design</span><span>UI design</span><span>Interaction</span><span>Visual design</span><span>Responsive</span><span>Web &amp; mobile apps</span><span>Wireframing</span><span>Prototyping</span><span>Brand identity</span></div></div>
+      <div class="tk reveal"><span class="mono">/02</span><h3>Research</h3><div class="chips"><span>User research</span><span>User interviews</span><span>Usability testing</span><span>UX audits</span><span>User flows</span></div></div>
+      <div class="tk reveal"><span class="mono">/03</span><h3>Systems &amp; handoff</h3><div class="chips"><span>Design systems</span><span>Design tokens</span><span>Figma variables</span><span>Component libraries</span><span>Accessibility</span><span>React / Next.js handoff</span><span>Agile / Scrum</span></div></div>
+      <div class="tk reveal"><span class="mono">/04</span><h3>AI workflows</h3><div class="chips"><span>AI-assisted design</span><span>AI prototyping</span><span>Design automation</span><span>Claude</span><span>ChatGPT</span><span>Figma + AI</span></div></div>
+      <div class="tk wide reveal"><span class="mono">/05</span><h3>Tools</h3><div class="chips"><span>Figma</span><span>Adobe XD</span><span>Sketch</span><span>Photoshop</span><span>Illustrator</span><span>Jira</span><span>Linear</span><span>GitLab</span><span>Trello</span><span>Microsoft 365</span><span>HTML5</span><span>CSS3</span></div></div>
+      <div class="tk edu reveal" style="grid-column:span 1">
+        <span class="mono">Education · 2011 — 2014</span>
+        <div><b>Bachelor of Computer Applications (BCA)</b><p>GLS University, Ahmedabad</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="mono reveal"><span class="dot"></span>Have a product that needs untangling?</p>
+    <h2 class="reveal"><a href="mailto:kheralpesh77@gmail.com">Let's <em>talk</em></a></h2>
+    <p class="lead reveal">Open to senior product design roles and conversations about B2B SaaS, design systems and AI-assisted design.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-primary" href="mailto:kheralpesh77@gmail.com">kheralpesh77@gmail.com <span class="arrow">↗</span></a>
+      <a class="btn" href="Alpesh-Kher-Resume.pdf" download>Download resume</a>
+    </div>
+    <div class="links reveal">
+      <a href="https://www.linkedin.com/in/alpeshkher" target="_blank" rel="noopener"><div><b>LinkedIn</b><small>/in/alpeshkher</small></div><span>↗</span></a>
+      <a href="https://www.behance.net/kheralpesh" target="_blank" rel="noopener"><div><b>Behance</b><small>/kheralpesh</small></div><span>↗</span></a>
+      <a href="https://dribbble.com/kheralpesh" target="_blank" rel="noopener"><div><b>Dribbble</b><small>/kheralpesh</small></div><span>↗</span></a>
+      <a href="https://www.figma.com/design/Z2wA6tUPQXvyR7pjvVheqC/Portfolio?node-id=1-14" target="_blank" rel="noopener"><div><b>Figma</b><small>Portfolio file</small></div><span>↗</span></a>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer class="wrap">
-  <span>© <span id="y">2026</span> Alpesh Kher</span>
-  <a href="#top">back to top ↑</a>
+<footer>
+  <div class="wrap">
+    <span class="mono">© <span id="year">2026</span> Alpesh Kher</span>
+    <span class="mono">Designed &amp; built by Alpesh · Ahmedabad, India</span>
+    <a class="mono" href="#top">Back to top ↑</a>
+  </div>
 </footer>
 
 <script>
-document.getElementById('y').textContent=new Date().getFullYear();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+(() => {
+  const nav = document.getElementById('nav');
+  const btn = document.getElementById('menuBtn');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Highlight the nav link for the section in view
+  const links = [...nav.querySelectorAll('.nav-links a')];
+  const spy = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id === 'brands' ? 'work' : e.target.id;
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['work', 'brands', 'about', 'journey', 'toolkit'].forEach(id => spy.observe(document.getElementById(id)));
+
+  // Colour-reveal portraits: the photo shows in grayscale and the pointer paints colour back in, which fades out
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    const img = el.querySelector('img');
+    const cv = el.querySelector('canvas');
+    const ctx = cv.getContext('2d');
+    const mask = document.createElement('canvas');
+    const mctx = mask.getContext('2d');
+    const colour = new Image();
+    colour.src = img.currentSrc || img.src;
+    let w = 0, h = 0, dpr = 1, raf = 0, idle = 0, last = null;
+    const pts = [];
+
+    const size = () => {
+      const r = el.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = r.width; h = r.height;
+      for (const c of [cv, mask]) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
+    };
+    size();
+    new ResizeObserver(size).observe(el);
+
+    const brush = (x, y) => {
+      const R = Math.max(w, h) * .15 * dpr;
+      const g = mctx.createRadialGradient(x, y, 0, x, y, R);
+      g.addColorStop(0, 'rgba(0,0,0,.9)');
+      g.addColorStop(.55, 'rgba(0,0,0,.45)');
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      mctx.fillStyle = g;
+      mctx.beginPath(); mctx.arc(x, y, R, 0, Math.PI * 2); mctx.fill();
+    };
+
+    const frame = () => {
+      // fade the existing trail, then paint new brush points
+      mctx.globalCompositeOperation = 'destination-out';
+      mctx.fillStyle = 'rgba(0,0,0,.025)';
+      mctx.fillRect(0, 0, mask.width, mask.height);
+      mctx.globalCompositeOperation = 'source-over';
+      while (pts.length) { const [x, y] = pts.shift(); brush(x * dpr, y * dpr); }
+      // colour image clipped to the trail
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.drawImage(mask, 0, 0);
+      ctx.globalCompositeOperation = 'source-in';
+      ctx.drawImage(colour, 0, 0, cv.width, cv.height);
+      ctx.globalCompositeOperation = 'source-over';
+      if (++idle < 220) raf = requestAnimationFrame(frame);
+      else { raf = 0; ctx.clearRect(0, 0, cv.width, cv.height); mctx.clearRect(0, 0, mask.width, mask.height); }
+    };
+
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      if (last) {
+        const steps = Math.max(1, Math.ceil(Math.hypot(x - last[0], y - last[1]) / 10));
+        for (let i = 1; i <= steps; i++) pts.push([last[0] + (x - last[0]) * i / steps, last[1] + (y - last[1]) * i / steps]);
+      } else pts.push([x, y]);
+      last = [x, y]; idle = 0;
+      if (!raf) raf = requestAnimationFrame(frame);
+      hint && hint.classList.add('hide');
+    });
+    el.addEventListener('pointerleave', () => { last = null; });
+  });
+
+  // Touch devices get different hint copy
+  const hint = document.getElementById('photoHint');
+  if (matchMedia('(hover: none)').matches) {
+    hint.querySelector('span').textContent = 'Drag across the portrait to add colour';
+    document.querySelectorAll('.portrait-stage .tag').forEach(t => t.lastChild.textContent = ' Touch me');
+  }
+
+  // Gentle parallax on the hero portrait
+  const heroPhoto = document.querySelector('.hero-photo');
+  if (!reduce) addEventListener('scroll', () => {
+    if (scrollY < innerHeight) heroPhoto.style.setProperty('--py', (scrollY * .18).toFixed(1) + 'px');
+  }, { passive: true });
+
+  // Local time in Ahmedabad
+  const clock = document.getElementById('clock');
+  const tick = () => clock.textContent = new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' });
+  tick(); setInterval(tick, 30000);
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
